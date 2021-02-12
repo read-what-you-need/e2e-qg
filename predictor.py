@@ -18,7 +18,7 @@ class PythonPredictor:
       self.redis_port = os.getenv('REDIS_PORT')
       self.redis_passkey = os.getenv('REDIS_PASSKEY')
 
-      self.r = redis.StrictRedis(host=self.redis_host, port=self.redis_port, auth=self.redis_passkey, ecode_responses=True)
+      self.r = redis.StrictRedis(host=self.redis_host, port=self.redis_port, password=self.redis_passkey, ecode_responses=True)
 
 
 
