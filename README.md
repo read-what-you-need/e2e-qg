@@ -1,7 +1,7 @@
 
 ## End to end question generation API
 
-- uses first questions from a list of suggested questions
+- uses first question from a list of suggested questions
 
 ### Credits to
 - [Cortex.dev](https://github.com/cortexlabs/cortex)
