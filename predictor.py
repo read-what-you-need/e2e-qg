@@ -21,4 +21,4 @@ class PythonPredictor:
         
       response = questions[0]
 
-      return questions[0]
+      return response
