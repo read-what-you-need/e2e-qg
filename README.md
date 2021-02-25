@@ -1,8 +1,7 @@
 
 ## End to end question generation API
 
-- Redis caching integration done for faster response times
-
+- uses first questions from a list of suggested questions
 
 ### Credits to
 - [Cortex.dev](https://github.com/cortexlabs/cortex)
