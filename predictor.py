@@ -1,5 +1,3 @@
-# download and upload files to s3
-
 import os, subprocess
 import io
 
