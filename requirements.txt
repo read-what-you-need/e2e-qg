@@ -1,0 +1,9 @@
+torch
+transformers
+sentencepiece==0.1.94
+nlp==0.2.0 
+nltk
+protobuf
+
+fastapi==0.70.0
+uvicorn==0.15.0
