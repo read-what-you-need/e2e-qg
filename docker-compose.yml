@@ -3,6 +3,8 @@ services:
     e2e-qg:
         build:
             context: .
+        env_file:
+        - .env
         ports:
             - "8005:80"
         volumes:
