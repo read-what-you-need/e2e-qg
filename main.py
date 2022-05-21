@@ -27,21 +27,27 @@ nlp = pipeline("e2e-qg")
 class Payload(BaseModel):
     query: str
 
-
+savekey="rastero:e2eqg:"
 @app.post("/")
 def main( payload: Payload):
     query = payload.query
     print('Question asked: ', query)
-    if r.sismember('context:', query) is False:
+    if r.hexists(savekey, query) is False:
         print('caching to be done')
         questions=nlp(query)
-        r.hset('rastero:e2eqg:'+query, query, questions[0])
-        r.sadd('rastero:e2eqg:', query)
-        return questions[0]
+        try:
+            questions[0]
+        except Exception as e:
+            print(e)
+            return "Question could not be generated."
+        else:
+            r.hset(savekey, query, questions[0])
+            return questions[0]
         
     else: 
         print('file available in redis cache! 😇')
-        response = r.hget('rastero:e2eqg:'+query, query)
+        response = r.hget(savekey, query)
+        print('response: ', response) 
         return response
 
 
