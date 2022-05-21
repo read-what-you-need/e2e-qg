@@ -28,3 +28,7 @@ def main( payload: Payload):
   print('Question asked: ', query)
   questions=nlp(query)
   return questions
+
+@app.get("/")
+async def root():
+    return {"message": "e2eqg"}
